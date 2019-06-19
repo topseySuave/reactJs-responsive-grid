@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
+@mixin transition ($value) {
+	transition: $value;
+	-moz-transition: $value;
+	-webkit-transition: $value;
+}
+
+.masonry-container{
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+
+	.loading {
+		text-align: center;
+		margin: 50px 0px;
+	}
+
+	p{
+		text-align: center;
+		padding: 10px;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: bold;
+		color: #222;
+	}
+
+	.masonry{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-content: stretch;
+		width: 100%;
+		margin: auto;
+	}
+
+	.column{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-content: stretch;
+		flex-grow: 1;
+	}
+
+	.tile{
+		margin: 4px;
+
+		img{
+			border-radius: 10px;
+			width: 100%;
+			cursor: pointer;
+			@include transition(all 200ms ease-in-out);
+
+			&:hover {
+				box-shadow: 0px 9px 15px 0px rgba(0, 0, 0, 0.15);
+			}
+		}
+	}
+
+	.scroll {
+		opacity: 0.5;
+		background-color: #00BFFF;
+		width: 50px;
+		height: 50px;
+		position: fixed;
+		bottom: 40px;
+		right: 40px;
+		border-radius: 5px;
+		border: none;
+		cursor: pointer;
+		
+		&:hover {
+			opacity: 1;
+		}
+
+		.arrow-up {
+			color: white;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -9px;
+			margin-left: -5px;
+		}
+	}
+}
